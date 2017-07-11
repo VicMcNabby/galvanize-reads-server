@@ -9,10 +9,11 @@ router.get('/', (req, res, next) => {
     res.json(authors)
   });
 });
+
 router.get("/:id", function(request, response, next) {
-  queries.getAuthorsByBooks(request.params.id)
-    .then(function(books) {
-      response.json(books);
+  queries.getBooksByAuthors(request.params.id)
+    .then(function(authors) {
+      response.json(authors);
     });
 });
 

@@ -11,9 +11,9 @@ router.get('/', (req, res, next) => {
 });
 
 router.get("/:id", function(request, response, next) {
-  queries.getBooksByAuthors(request.params.id)
-    .then(function(authors) {
-      response.json(authors);
+  queries.getAuthorsByBooks(request.params.id)
+    .then(function(books) {
+      response.json(books);
     });
 });
 

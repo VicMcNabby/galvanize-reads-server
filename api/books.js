@@ -10,7 +10,13 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get("/:id", function(request, response, next) {
+router.get('/:id', (req, res, next) => {
+  queries.getBookById(req.params.id).then(user => {
+    res.json(user);
+  });
+});
+
+router.get("/:id/authors", function(request, response, next) {
   queries.getAuthorsByBooks(request.params.id)
     .then(function(books) {
       response.json(books);

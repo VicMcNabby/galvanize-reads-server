@@ -7,6 +7,12 @@ module.exports = {
   getAllAuthors() {
     return knex('authors')
   },
+  getBookById(id) {
+    return knex('books').where('id', id);
+  },
+  getAuthorById(id) {
+    return knex('authors').where('id', id);
+  },
   getAuthorsByBooks(id) {
     return knex('authors').where('book_id', id)
       .join('book_author', 'author_id', 'authors.id');

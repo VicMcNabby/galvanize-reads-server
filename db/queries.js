@@ -20,5 +20,8 @@ module.exports = {
   getBooksByAuthors(id) {
     return knex('books').where('author_id', id)
       .join('book_author', 'book_id', 'books.id')
+  },
+  createBook(book) {
+    return knex('books').insert(book, '*');
   }
 }

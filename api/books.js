@@ -23,4 +23,15 @@ router.get("/:id/authors", function(request, response, next) {
     });
 });
 
+router.post('/', function(req, res, next) {
+  queries.createBook({
+    title: req.body.title,
+    genre: req.body.genre,
+    cover_url: req.body.cover_url,
+    description: req.body.description
+  }).then(function(result) {
+    res.json(result);
+  });
+});
+
 module.exports = router

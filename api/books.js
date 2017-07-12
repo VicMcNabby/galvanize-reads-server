@@ -27,8 +27,8 @@ router.post('/', function(req, res, next) {
   queries.createBook({
     title: req.body.title,
     genre: req.body.genre,
-    cover_url: req.body.cover_url,
-    description: req.body.description
+    description: req.body.description,
+    cover_url: req.body.cover_url
   }).then(function(result) {
     res.json(result);
   });

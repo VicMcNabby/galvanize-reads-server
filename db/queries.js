@@ -23,5 +23,8 @@ module.exports = {
   },
   createBook(book) {
     return knex('books').insert(book, '*');
+  },
+  deleteBook(id) {
+    return knex('books').where('id', id).del()
   }
 }

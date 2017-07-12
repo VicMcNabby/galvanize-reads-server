@@ -34,4 +34,12 @@ router.post('/', function(req, res, next) {
   });
 });
 
+router.delete('/:id', (req, res, next) => {
+  queries.deleteBook(req.params.id).then(() => {
+    res.json({
+      deleted: true
+    });
+  });
+});
+
 module.exports = router

@@ -36,7 +36,7 @@ module.exports = {
   updateAuthor(id, author) {
     return knex('authors').where('id', id).update(author, '*')
   },
-  createAuthor(book) {
+  createAuthor(author) {
     return knex('authors').insert(author, '*');
   }
 }

@@ -24,6 +24,9 @@ module.exports = {
   createBook(book) {
     return knex('books').insert(book, '*');
   },
+  updateBook(id, book) {
+    return knex('books').where('id', id).update(book, '*')
+  },
   deleteBook(id) {
     return knex('books').where('id', id).del()
   }

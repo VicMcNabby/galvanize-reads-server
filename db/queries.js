@@ -29,5 +29,14 @@ module.exports = {
   },
   deleteBook(id) {
     return knex('books').where('id', id).del()
+  },
+  deleteAuthor(id) {
+    return knex('authors').where('id', id).del()
+  },
+  updateAuthor(id, author) {
+    return knex('authors').where('id', id).update(author, '*')
+  },
+  createAuthor(book) {
+    return knex('authors').insert(author, '*');
   }
 }
